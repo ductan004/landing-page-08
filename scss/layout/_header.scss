@@ -15,6 +15,7 @@
   @extend %flex-ItemCenter;
   padding: 30px 0;
   position: relative;
+  z-index: 1;
 
   @include abstracts.breakpoint(lg) {
     padding: 22px 0;

@@ -22,18 +22,37 @@
     <script src="./assets/js/script.js"></script>
   </head>
   <body>
+    <!-- Header -->
     <header id="header" class="header"></header>
     <script>
       load("#header", "./templates/header.html ");
     </script>
     <div class="container">
-      <!-- Header -->
-
-      <!-- Footer -->
-      <footer id="footer"></footer>
-      <script>
-        load("#footer", "./templates/footer.html ");
-      </script>
+      <!-- SlideShow -->
+      <div class="slideshow">
+        <!-- SlideShow Inner -->
+        <div class="slideshow__inner d-flex">
+          <div class="slideshow__item">
+            <a href="#!" class="slideshow__link">
+              <picture>
+                <source media="(max-width: 767.98px)" srcset="./assets/img/slideshow/slideshow-01Small.png" />
+                <img src="./assets/img/slideshow/slideShow-01.png" alt="" class="slideshow__img" />
+              </picture>
+            </a>
+          </div>
+          <!-- Slideshow page -->
+          <div class="slideshow__page d-flex">
+            <span class="slideshow__num">1</span>
+            <span class="slideshow__slider"></span>
+            <span class="slideshow__num">5</span>
+          </div>
+        </div>
+      </div>
     </div>
+    <!-- Footer -->
+    <footer id="footer"></footer>
+    <script>
+      load("#footer", "./templates/footer.html ");
+    </script>
   </body>
 </html>
