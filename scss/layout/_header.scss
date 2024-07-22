@@ -6,7 +6,7 @@
 
 .header {
   background: var(--header-bg-color);
-  @include abstracts.breakpoint(lg) {
+  @include abstracts.screen(lg) {
     box-shadow: 0px 20px 60px 10px var(--header-shadow-color);
   }
 }
@@ -17,10 +17,10 @@
   position: relative;
   z-index: 1;
 
-  @include abstracts.breakpoint(lg) {
+  @include abstracts.screen(lg) {
     padding: 22px 0;
   }
-  @include abstracts.breakpoint(md) {
+  @include abstracts.screen(md) {
     padding: 16px 0;
     justify-content: space-between;
   }
@@ -29,22 +29,22 @@
 .navbar {
   margin-left: 129px;
   z-index: 9;
-  @include abstracts.breakpoint(xl) {
+  @include abstracts.screen(xl) {
     margin-left: 26px;
   }
 
   &__close--btb {
     display: none;
-    @include abstracts.breakpoint(lg) {
+    @include abstracts.screen(lg) {
       display: block;
       padding: 10px 40px;
     }
-    @include abstracts.breakpoint(sm) {
+    @include abstracts.screen(sm) {
       padding: 0 20px 10px;
     }
   }
 
-  @include abstracts.breakpoint(lg) {
+  @include abstracts.screen(lg) {
     // display: none;
     border-radius: 0px 20px 20px 0px;
     position: fixed;
@@ -53,7 +53,7 @@
     margin-left: 0;
     padding: 20px 0;
 
-    @include abstracts.breakpoint(sm) {
+    @include abstracts.screen(sm) {
       inset: 0 20% 0 0;
     }
 
@@ -74,7 +74,7 @@
   &__overlay {
     visibility: hidden;
     opacity: 0;
-    @include abstracts.breakpoint(lg) {
+    @include abstracts.screen(lg) {
       position: fixed;
       inset: 0;
       z-index: 8;
@@ -87,7 +87,7 @@
   &__list {
     @extend %flex-ItemCenter;
     // column-gap: 30px;
-    @include abstracts.breakpoint(lg) {
+    @include abstracts.screen(lg) {
       flex-direction: column;
       align-items: flex-start;
 
@@ -96,7 +96,7 @@
       height: calc(100% - 40px);
     }
 
-    @include abstracts.breakpoint(md) {
+    @include abstracts.screen(md) {
       height: calc(100% - 140px);
     }
   }
@@ -106,7 +106,7 @@
       display: block;
     }
 
-    @include abstracts.breakpoint(lg) {
+    @include abstracts.screen(lg) {
       width: 100%;
 
       &:hover .dropdown {
@@ -127,14 +127,14 @@
     font-size: 1.5rem;
     font-weight: 500;
     line-height: 1.47; /* 146.667% */
-    @include abstracts.breakpoint(lg) {
+    @include abstracts.screen(lg) {
       justify-content: space-between;
       padding: 0 40px;
       font-size: 1.6rem;
       line-height: 1.5; /* 150% */
     }
 
-    @include abstracts.breakpoint(sm) {
+    @include abstracts.screen(sm) {
       height: 44px;
       padding: 0 20px;
     }
@@ -143,7 +143,7 @@
   &__arrow {
     margin-top: 3px;
     transition: transform 0.3s ease;
-    @include abstracts.breakpoint(lg) {
+    @include abstracts.screen(lg) {
       transform: rotate(-90deg);
     }
   }
@@ -158,7 +158,7 @@
   @extend %flex-ItemCenter;
   gap: 20px;
 
-  @include abstracts.breakpoint(md) {
+  @include abstracts.screen(md) {
     margin-left: 0;
   }
   &__group {
@@ -172,7 +172,7 @@
   }
 
   &__group--single {
-    @include abstracts.breakpoint(lg) {
+    @include abstracts.screen(lg) {
       display: none;
     }
   }
@@ -214,7 +214,7 @@
   align-items: center;
   padding: 0 40px;
 
-  @include abstracts.breakpoint(sm) {
+  @include abstracts.screen(sm) {
     padding: 0 20px;
     height: 44px;
   }
