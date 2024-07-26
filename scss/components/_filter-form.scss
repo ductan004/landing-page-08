@@ -142,6 +142,10 @@
       font-weight: 500;
       line-height: 1.47;
 
+      @include abstracts.screen(sm) {
+        font-size: 1.6rem;
+      }
+
       &::placeholder {
         font-weight: 400;
       }
