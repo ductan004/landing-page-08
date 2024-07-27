@@ -1,0 +1,140 @@
+@use "../abstracts";
+$error-color: #ed4337;
+.form {
+  &:has(:invalid) &__submit-btn {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  &__group {
+    margin-top: 30px;
+  }
+
+  &__group:has(:invalid):has(&__input:not(:placeholder-shown)) {
+    .form__text-input {
+      border-color: $error-color;
+      background: rgba($color: $error-color, $alpha: 0.1);
+    }
+
+    .form__error,
+    .form__input-icon-error {
+      display: block;
+    }
+
+    .form__input-icon {
+      display: none;
+    }
+  }
+  &__error {
+    text-align: left;
+    font-weight: 500px;
+    font-weight: 500;
+    margin-top: 10px;
+    color: $error-color;
+    display: none;
+  }
+
+  &__input-icon-error {
+    display: none;
+    margin-left: 12px;
+    animation: shake 0.5s;
+  }
+
+  &__group--inline {
+    display: flex;
+    align-items: center;
+  }
+
+  &__text-input {
+    display: flex;
+    align-items: center;
+
+    height: 50px;
+    padding: 0 12px;
+    border-radius: 10px;
+    border: 1.6px solid #d2d1d6;
+
+    &:focus-within {
+      border-color: #77dae6;
+    }
+
+    @include abstracts.screen(md) {
+      height: 48px;
+    }
+  }
+
+  &__input {
+    flex: 1;
+    height: 100%;
+
+    font-size: 1.8rem;
+    font-weight: 500;
+
+    &::placeholder {
+      color: var(--form-placeholder-color);
+    }
+
+    &-icon {
+      margin-left: 12px;
+    }
+
+    @include abstracts.screen(md) {
+      font-size: 1.6rem;
+    }
+  }
+
+  &__pull-right {
+    margin-left: auto;
+  }
+
+  &__checkbox {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    user-select: none;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+    }
+
+    &::before {
+      width: 19px;
+      height: 19px;
+      border-radius: 4px;
+      border: 1.6px solid #9e9da8;
+    }
+
+    &-lable {
+      margin-left: 29px;
+      color: #9e9da8;
+      font-size: 1.5rem;
+      font-weight: 500;
+      line-height: 1.47; /* 146.667% */
+
+      @include abstracts.screen(md) {
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  &__checkbox:has(:checked) {
+    &::before {
+      background: #77dae6;
+      border-color: #77dae6;
+    }
+
+    &::after {
+      left: 2px;
+      top: 5px;
+
+      width: 15px;
+      height: 8px;
+      border: 3px solid;
+      border-color: transparent transparent #fff #fff;
+      rotate: -45deg;
+    }
+  }
+}

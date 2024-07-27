@@ -24,6 +24,29 @@
     padding: 16px 0;
     justify-content: space-between;
   }
+
+  &__logo {
+    @include abstracts.screen(lg) {
+      column-gap: 10px !important;
+      margin-left: 40px;
+
+      &-title {
+        font-size: 1.8rem !important;
+      }
+
+      &-img {
+        width: 24px;
+      }
+    }
+
+    @include abstracts.screen(md) {
+      margin-left: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
 }
 
 .navbar {
@@ -160,6 +183,12 @@
 
   @include abstracts.screen(md) {
     margin-left: 0;
+
+    &__sign-up {
+      height: 40px !important;
+      padding: 0 8px !important;
+      font-size: 1.5rem !important;
+    }
   }
   &__group {
     @extend %flex-ItemCenter;
