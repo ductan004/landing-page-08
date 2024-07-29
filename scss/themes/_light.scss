@@ -35,7 +35,7 @@
   //filter form
   --filter-form-bg: #fff;
   --filter-form-shadow: rgba(200, 200, 200, 0.4);
-  --filter-form-tag-bg: #f8f8f8;
+  --form-tag-bg: #f8f8f8;
   --filter-form-footer-bg: #fff;
 
   // Auth
@@ -43,8 +43,29 @@
 
   // form
   --form-placeholder-color: #d2d1d6;
+
+  // Product Detail
+  --product-detail-bg: #fff;
+  --product-detail-info-bg: #f6f6f6;
+  --product-detail-info-content-bg: #fff;
+  --product-detail-tag-bg: #ededf6;
+  //breadcrumbs
+  --breadcrumbs-bg: #f6f6f6;
+  --breadcrumbs-shadow: rgba(237, 237, 246, 0.2);
+
+  // Reivew card
+  --review-card-bg: #fafafd;
+
+  //search bar
+  --search-bar-bg: #fff;
+
+  // Text content
+  --text-content-hr-bg: #ebebeb;
   @include abstracts.screen(md) {
     --auth-intro-bg: #fff;
+
+    // Reivew card
+    --review-card-bg: #fff;
   }
   @include abstracts.screen(lg) {
     --header-bg-color: #fff;
@@ -52,6 +73,9 @@
   }
 
   @include abstracts.screen(md) {
-    --cate-item-bg: #fff;
+    --product-detail-bg: #fafafd;
+    --product-detail-info-bg: #fff;
+
+    --breadcrumbs-bg: #fff;
   }
 }

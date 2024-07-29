@@ -1,0 +1,269 @@
+@use "../abstracts";
+
+.product-page {
+  padding-bottom: 50px;
+  min-height: 80vh;
+  background: var(--product-detail-bg);
+  display: flex;
+  flex-direction: column;
+}
+
+.product-container {
+  margin-top: 30px;
+
+  @include abstracts.screen(md) {
+    margin-top: 20px;
+  }
+}
+
+.prod-info-container {
+  @include abstracts.screen(lg) {
+    background: var(--product-detail-info-content-bg);
+  }
+  border-radius: 20px;
+}
+
+.prod-preview {
+  padding: 0 30px;
+
+  @include abstracts.screen(lg) {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  @include abstracts.screen(md) {
+    padding: 16px;
+  }
+  &__list {
+    display: flex;
+    overflow: hidden;
+
+    @include abstracts.screen(lg) {
+      flex-grow: 1;
+    }
+  }
+
+  &__item {
+    position: relative;
+    width: 100%;
+    flex-shrink: 0;
+    padding-top: 92%;
+  }
+
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  &__thumbs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 30px;
+
+    @include abstracts.screen(lg) {
+      flex-direction: column;
+      padding-left: 0;
+    }
+
+    @include abstracts.screen(md) {
+      display: none;
+    }
+  }
+
+  &__thumbs-img {
+    border: 1.5px solid #9e9da8;
+    border-radius: 8px;
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      border-color: #ffb700;
+    }
+
+    &--active {
+      border-color: #ffb700;
+    }
+  }
+}
+
+.prod-info {
+  padding: 60px;
+  border-radius: 10px;
+  background: var(--product-detail-info-bg);
+
+  @include abstracts.screen(xxl) {
+    padding: 40px;
+  }
+
+  @include abstracts.screen(lg) {
+    margin-top: 30px;
+  }
+
+  @include abstracts.screen(md) {
+    border-radius: 20px;
+    margin-top: 0;
+    padding-top: 0 16px 16px;
+  }
+
+  &__heading {
+    font-size: 2.6rem;
+    font-weight: 500;
+    line-height: 1.38; /* 138.462% */
+  }
+  &__lable {
+    margin-top: 30px;
+  }
+
+  &__tag {
+    background: var(--product-detail-tag-bg);
+  }
+
+  &__card {
+    margin-top: 30px;
+    padding: 20px;
+
+    border-radius: 6px;
+    border: 1px solid #b9babe;
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+  }
+
+  &__price {
+    font-size: 1.6rem;
+    font-weight: 500;
+  }
+
+  &__tax {
+    margin-left: 10px;
+    background: #e1efda;
+    padding: 2px 8px;
+    border-radius: 4px;
+
+    color: #67b044;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.43; /* 142.857% */
+  }
+
+  &__total-price {
+    margin: 20px 0;
+    font-size: 2.6rem;
+    font-weight: 500;
+    line-height: 1.39; /* 138.462% */
+  }
+
+  &__btn-cart {
+    flex: 1;
+  }
+
+  &__like-btn {
+    margin-left: 20px;
+    width: 46px;
+    height: 46px;
+    border-radius: 6px;
+    border: 1px solid #d2d1d6;
+  }
+}
+
+.prod-props {
+  padding-left: 30px;
+  @include abstracts.screen(xxl) {
+    padding-left: 10px;
+  }
+
+  @include abstracts.screen(lg) {
+    padding-left: 0;
+  }
+}
+
+.prod-prop {
+  display: flex;
+  gap: 16px;
+  margin-top: 30px;
+
+  &__icon {
+    align-self: flex-start;
+  }
+
+  &__title {
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 1.44; /* 144.444% */
+  }
+
+  &__desc {
+    margin-top: 4px;
+    font-size: 1.4rem;
+    line-height: 1.43; /* 142.857% */
+  }
+}
+
+.prod-tab {
+  &__list {
+    display: flex;
+    align-items: center;
+    margin: 0 -30px;
+    @include abstracts.screen(md) {
+      margin: 0 -10px;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__item {
+    padding: 0 30px;
+
+    font-size: 2.2rem;
+    font-weight: 500;
+    line-height: 1.45; /* 145.455% */
+    user-select: none;
+    cursor: pointer;
+    white-space: nowrap;
+
+    @include abstracts.screen(md) {
+      padding: 8px 10px;
+      font-size: 1.8rem;
+    }
+
+    color: #9e9da8;
+
+    &--active {
+      color: inherit;
+    }
+  }
+
+  &__contents {
+    padding-top: 30px;
+  }
+
+  &__content {
+    display: none;
+
+    &--active {
+      display: block;
+    }
+  }
+}
+
+.prod-content {
+  // margin-top: 30px;
+
+  &__heading {
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.42; /* 141.667% */
+    margin-bottom: 30px;
+  }
+}
