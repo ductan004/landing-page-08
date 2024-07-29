@@ -17,10 +17,11 @@
 }
 
 .prod-info-container {
+  border-radius: 20px;
+
   @include abstracts.screen(lg) {
     background: var(--product-detail-info-content-bg);
   }
-  border-radius: 20px;
 }
 
 .prod-preview {
@@ -232,12 +233,12 @@
     cursor: pointer;
     white-space: nowrap;
 
+    color: #9e9da8;
+
     @include abstracts.screen(md) {
       padding: 8px 10px;
       font-size: 1.8rem;
     }
-
-    color: #9e9da8;
 
     &--active {
       color: inherit;
