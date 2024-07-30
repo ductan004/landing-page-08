@@ -2492,6 +2492,10 @@ html.dark {
 .btn--rounded {
   border-radius: 99px;
 }
+.btn--danger {
+  color: var(--button-danger-color, #fff);
+  background: #ed4337;
+}
 .btn[disabled], .btn--disabled {
   opacity: 0.5;
   pointer-events: none;
@@ -3194,14 +3198,14 @@ html.dark {
   align-items: center;
   justify-content: flex-end;
   flex-wrap: wrap;
-  gap: 30px;
-  margin-top: 30px;
+  margin-top: 50px;
 }
 @media (max-width: 767.98px) {
   .modal__btn {
     flex: 1;
   }
   .modal__bottom {
+    margin-top: 30px;
     gap: 20px;
   }
 }

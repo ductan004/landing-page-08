@@ -87,6 +87,12 @@
   &--rounded {
     border-radius: 99px;
   }
+
+  &--danger {
+    color: var(--button-danger-color, #fff);
+    background: #ed4337;
+  }
+
   &[disabled],
   &--disabled {
     opacity: 0.5;

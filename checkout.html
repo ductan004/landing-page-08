@@ -353,23 +353,21 @@
     <!-- modal :confirm reomove shopping cart item -->
     <div class="modal modal--small hide" id="delete-confirm">
       <div class="modal__content">
-        <p class="modal__text">
-          Lorem ipsum dolor, sit amet optio ut aut nam consequatur eos, asperiores sit laudantium.
-        </p>
+        <p class="modal__text">Do you want remove this item?</p>
         <div class="modal__bottom">
-          <button class="btn btn--text modal__btn js-toggle" toggle-target="#delete-confirm">Cancel</button>
-          <button class="btn btn--primary btn--small modal__btn">Delete</button>
+          <button class="btn btn--outline modal__btn js-toggle" toggle-target="#delete-confirm">Cancel</button>
+          <button class="btn btn--primary btn--small btn--danger modal__btn">Remove</button>
         </div>
       </div>
       <div class="modal__overlay js-toggle" toggle-target="#delete-confirm"></div>
     </div>
 
     <!-- modal :address new shopping address -->
-    <div class="modal show" id="add-new-address">
+    <div class="modal hide" id="add-new-address">
       <div class="modal__content">
         <div class="modal__body">
           <h2 class="modal__heading">Add new shopping address</h2>
-          <form class="form">
+          <form action="" class="form">
             <div class="form__row">
               <div class="form__group">
                 <label for="name" class="form__lable form__lable--small">Name</label>
@@ -429,11 +427,11 @@
               </div>
               <p class="form__error">Name must be at least characters</p>
             </div>
+            <div class="modal__bottom">
+              <button class="btn btn--text modal__btn js-toggle" toggle-target="#add-new-address">Cancel</button>
+              <button class="btn btn--primary btn--small modal__btn" type="submit">Create</button>
+            </div>
           </form>
-        </div>
-        <div class="modal__bottom">
-          <button class="btn btn--text modal__btn js-toggle" toggle-target="#add-new-address">Cancel</button>
-          <button class="btn btn--primary btn--small modal__btn">Delete</button>
         </div>
       </div>
       <div class="modal__overlay"></div>
