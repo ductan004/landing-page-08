@@ -159,6 +159,15 @@ button {
   cursor: pointer;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+input:-webkit-autofill:hover {
+  transition: background-color 1s 9999s;
+  -webkit-text-fill-color: var(--text-color);
+  caret-color: var(--text-color);
+}
+
 a,
 img,
 button,
@@ -1459,8 +1468,8 @@ strong {
   --cart-info-shadow: rgba(237, 237, 246, 0.2);
   --cart-border-color: #d2d1d6;
   --cart-gift-shadow: rgba(237, 237, 246, 0.2);
-  --dialog-bg: #fff;
-  --dialog-shadow: rgba(237, 237, 246, 0.2);
+  --modal-bg: #fff;
+  --modal-shadow: rgba(237, 237, 246, 0.2);
 }
 @media (max-width: 767.98px) {
   :root {
@@ -1537,8 +1546,8 @@ html.dark {
   --cart-info-shadow: rgba(23, 28, 40, 0.2);
   --cart-border-color: #292e39;
   --cart-gift-shadow: rgba(23, 28, 40, 0.2);
-  --dialog-bg: #2f3441;
-  --dialog-shadow: rgba(23, 28, 40, 0.4);
+  --modal-bg: #2f3441;
+  --modal-shadow: rgba(23, 28, 40, 0.4);
 }
 @media (max-width: 991.98px) {
   html.dark {
@@ -2724,7 +2733,23 @@ html.dark {
   opacity: 0.5;
   pointer-events: none;
 }
+.form__row {
+  display: flex;
+  gap: 30px;
+}
+@media (max-width: 767.98px) {
+  .form__row {
+    gap: 20px;
+  }
+}
+@media (max-width: 575.98px) {
+  .form__row {
+    flex-direction: column;
+    gap: 0;
+  }
+}
 .form__group {
+  flex: 1;
   margin-top: 30px;
 }
 .form__group:has(:invalid):has(.form__input:not(:placeholder-shown)) .form__text-input {
@@ -2763,6 +2788,10 @@ html.dark {
   border-radius: 10px;
   border: 1.6px solid #d2d1d6;
 }
+.form__text-input--small {
+  border-radius: 8px;
+  height: 42px;
+}
 .form__text-input:focus-within {
   border-color: #77dae6;
 }
@@ -2774,6 +2803,7 @@ html.dark {
 .form__input {
   flex: 1;
   height: 100%;
+  width: 100%;
   font-size: 1.8rem;
   font-weight: 500;
 }
@@ -3105,7 +3135,7 @@ html.dark {
   padding: 0 15px;
 }
 
-.dialog {
+.modal {
   position: fixed;
   inset: 0;
   z-index: 99;
@@ -3116,29 +3146,50 @@ html.dark {
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
 }
-.dialog.show {
+.modal__heading {
+  font-size: 2.2rem;
+  font-weight: 500;
+  line-height: 1.45; /* 145.455% */
+}
+.modal.show {
   opacity: 1;
   visibility: visible;
 }
-.dialog__overlay {
+.modal__overlay {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.4);
 }
-.dialog__content {
+.modal__content {
   position: relative;
   z-index: 1;
-  max-width: min(450px, 100% - 40px);
   padding: 30px;
+  width: min(var(--content-width, 650px), 100% - 40px);
   border-radius: 20px;
-  background: var(--dialog-bg);
-  box-shadow: 0px 20px 60px 10px var(--dialog-shadow);
+  background: var(--modal-bg);
+  box-shadow: 0px 20px 60px 10px var(--modal-shadow);
 }
-.dialog__text {
+@media (max-width: 575.98px) {
+  .modal__content {
+    padding: 20px;
+  }
+}
+.modal--small .modal__content {
+  --content-width: 400px;
+}
+.modal--large .modal__content {
+  --content-width: 1100px;
+}
+.modal--full .modal__content {
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+}
+.modal__text {
   font-size: 1.8rem;
   line-height: 1.5;
 }
-.dialog__bottom {
+.modal__bottom {
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -3147,13 +3198,10 @@ html.dark {
   margin-top: 30px;
 }
 @media (max-width: 767.98px) {
-  .dialog {
-    padding: 20px;
-  }
-  .dialog__btn {
+  .modal__btn {
     flex: 1;
   }
-  .dialog__bottom {
+  .modal__bottom {
     gap: 20px;
   }
 }
@@ -3618,6 +3666,17 @@ html.dark {
     padding: 16px;
   }
 }
+.cart-info__heading {
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1.42; /* 141.667% */
+}
+.cart-info__sub-heading {
+  margin: 30px 0;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.44;
+}
 .cart-info__list {
   margin-top: -30px;
 }
@@ -3645,7 +3704,7 @@ html.dark {
   font-weight: 700;
 }
 .cart-info__separate {
-  margin-top: 30px;
+  margin: 30px 0;
   height: 1px;
   background: var(--cart-border-color);
 }
@@ -3776,6 +3835,9 @@ html.dark {
   font-weight: 500;
   line-height: 1.47; /* 146.667% */
 }
+.cart-item__input-btn {
+  display: flex;
+}
 .cart-item__total-price {
   text-align: right;
   font-size: 2.2rem;
@@ -3825,6 +3887,110 @@ html.dark {
   margin-top: 10px;
   font-size: 1.4rem;
   line-height: 1.43; /* 142.857% */
+}
+
+.user-address__top {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+@media (max-width: 767.98px) {
+  .user-address__top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+@media (max-width: 767.98px) {
+  .user-address__btn {
+    height: 46px;
+  }
+}
+.user-address__title {
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.44; /* 144.444% */
+}
+.user-address__desc {
+  margin-top: 4px;
+  font-size: 1.5rem;
+  line-height: 1.47; /* 146.667% */
+}
+.user-address__massage {
+  margin-top: 30px;
+  font-weight: 500;
+}
+.user-address__link {
+  color: #0071dc;
+}
+
+.address-card {
+  margin-top: 30px;
+  display: flex;
+  gap: 16px;
+}
+@media (max-width: 767.98px) {
+  .address-card {
+    flex-direction: column;
+  }
+}
+.address-card__left {
+  flex: 1;
+  display: flex;
+  gap: 16px;
+}
+.address-card__title {
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.44; /* 144.444% */
+}
+.address-card__desc {
+  margin-top: 4px;
+  max-width: 570px;
+  font-size: 1.5rem;
+  line-height: 1.47; /* 146.667% */
+}
+.address-card__list {
+  display: flex;
+  margin-top: 20px;
+  gap: 30px;
+  font-size: 1.4rem;
+  line-height: 1.43;
+  list-style: disc inside;
+}
+@media (max-width: 575.98px) {
+  .address-card__list {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+.address-card__list-item {
+  margin-left: 8px;
+}
+.address-card__crtl {
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+}
+.address-card__crtl-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.4rem;
+  line-height: 1.44;
+}
+.address-card__checkbox-input {
+  appearance: none;
+}
+.address-card__checkbox-input::before {
+  content: url("../../assets/img/icons/checkbox-uncheck.svg");
+}
+.address-card__checkbox-input:not(:checked)::before {
+  filter: var(--icon-color);
+}
+.address-card__checkbox-input:checked::before {
+  content: url("../../assets/img/icons/checkbox-check.svg");
 }
 
 /*# sourceMappingURL=main.css.map */

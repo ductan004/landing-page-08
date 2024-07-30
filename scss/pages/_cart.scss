@@ -29,6 +29,19 @@
     padding: 16px;
   }
 
+  &__heading {
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.42; /* 141.667% */
+  }
+
+  &__sub-heading {
+    margin: 30px 0;
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 1.44;
+  }
+
   &__list {
     margin-top: -30px;
 
@@ -62,7 +75,7 @@
   }
 
   &__separate {
-    margin-top: 30px;
+    margin: 30px 0;
     height: 1px;
     background: var(--cart-border-color);
   }
@@ -201,6 +214,10 @@
     font-size: 1.5rem;
     font-weight: 500;
     line-height: 1.47; /* 146.667% */
+
+    &-btn {
+      display: flex;
+    }
   }
 
   &__total-price {
@@ -257,5 +274,127 @@
     margin-top: 10px;
     font-size: 1.4rem;
     line-height: 1.43; /* 142.857% */
+  }
+}
+
+.user-address {
+  &__top {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+
+    @include abstracts.screen(md) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__btn {
+    @include abstracts.screen(md) {
+      height: 46px;
+    }
+  }
+
+  &__title {
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 1.44; /* 144.444% */
+  }
+
+  &__desc {
+    margin-top: 4px;
+    font-size: 1.5rem;
+    line-height: 1.47; /* 146.667% */
+  }
+
+  &__massage {
+    margin-top: 30px;
+    font-weight: 500;
+  }
+
+  &__link {
+    color: #0071dc;
+  }
+}
+
+.address-card {
+  margin-top: 30px;
+  display: flex;
+  gap: 16px;
+
+  @include abstracts.screen(md) {
+    flex-direction: column;
+  }
+
+  &__left {
+    flex: 1;
+    display: flex;
+    gap: 16px;
+  }
+
+  &__title {
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 1.44; /* 144.444% */
+  }
+
+  &__desc {
+    margin-top: 4px;
+    max-width: 570px;
+    font-size: 1.5rem;
+    line-height: 1.47; /* 146.667% */
+  }
+
+  &__list {
+    display: flex;
+    margin-top: 20px;
+    gap: 30px;
+
+    font-size: 1.4rem;
+    line-height: 1.43;
+    list-style: disc inside;
+
+    @include abstracts.screen(sm) {
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    &-item {
+      margin-left: 8px;
+    }
+  }
+
+  &__crtl {
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+
+    &-btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.4rem;
+      line-height: 1.44;
+    }
+  }
+
+  &__checkbox {
+    &-input {
+      appearance: none;
+
+      &::before {
+        content: url("../../assets/img/icons/checkbox-uncheck.svg");
+      }
+
+      &:not(:checked)::before {
+        filter: var(--icon-color);
+      }
+
+      &:checked::before {
+        content: url("../../assets/img/icons/checkbox-check.svg");
+      }
+    }
   }
 }
