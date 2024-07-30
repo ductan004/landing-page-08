@@ -48,13 +48,20 @@
   gap: 10px;
 
   height: 46px;
+  padding: 0 20px;
+  border-radius: 6px;
+
   background: #f8f8f8;
 
   font-size: 1.8rem;
   font-weight: 500;
-  border-radius: 6px;
-  padding: 0 20px;
+  white-space: nowrap;
   user-select: none;
+
+  &--small {
+    height: 40px;
+    padding: 0 16px;
+  }
 
   + .btn {
     &:not(.btn--no-margin) {
@@ -64,8 +71,6 @@
 
   &--text {
     font-family: 400;
-
-    color: #9e9da8;
     background: transparent;
   }
 
