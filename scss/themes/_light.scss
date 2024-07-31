@@ -72,11 +72,20 @@
   --cart-info-shadow: rgba(237, 237, 246, 0.2);
   --cart-border-color: #d2d1d6;
   --cart-gift-shadow: rgba(237, 237, 246, 0.2);
+  --cart-payment-item-bg: #f6f6f6;
 
   // modal
   --modal-bg: #fff;
   --modal-shadow: rgba(237, 237, 246, 0.2);
 
+  // profile
+  --profile-sidebar-bg: #fff;
+  --profile-sidebar-shadow: rgba(237, 237, 246, 0.2);
+  --profile-link-hover-color: #ebebeb;
+
+  // account
+  --acccount-info-bg: #f6f6f6;
+  --acccount-info-icon-bg: #fff;
   @include abstracts.screen(md) {
     --auth-intro-bg: #fff;
 

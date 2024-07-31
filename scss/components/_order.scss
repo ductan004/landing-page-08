@@ -1,0 +1,125 @@
+@use "../abstracts";
+.order {
+  padding: 30px;
+  border-radius: 20px;
+  background: var(--cart-info-bg);
+  box-shadow: 0px 20px 60px 10px var(--cart-info-shadow);
+
+  &-mt {
+    margin-top: 30px;
+    margin-bottom: 80px;
+  }
+
+  @include abstracts.screen(md) {
+    padding: 16px;
+  }
+
+  &__list {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 42px;
+  }
+
+  &-top {
+    display: flex;
+
+    border-top: 1px solid var(--cart-border-color);
+    padding-top: 30px;
+    border-bottom: 1px solid var(--cart-border-color);
+    padding-bottom: 30px;
+
+    @include abstracts.screen(lg) {
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    > * {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+
+  &__mid {
+    margin: 0 auto 0 100px;
+
+    @include abstracts.screen(xl) {
+      margin-left: 30px;
+    }
+
+    @include abstracts.screen(lg) {
+      margin-left: 0;
+    }
+  }
+
+  &__id {
+    font-size: 1.8rem;
+    font-weight: 500;
+  }
+
+  &__text {
+    font-size: 1.4rem;
+  }
+
+  &__total {
+    margin-top: 14px;
+    font-size: 1.6rem;
+    font-weight: 500;
+  }
+
+  &__status {
+    width: min(100px, 100%);
+    background: #62ae36;
+    padding: 5px;
+    border-radius: 7px;
+    color: #d9ffc4;
+    white-space: nowrap;
+  }
+
+  &__separate {
+    margin: 30px 0;
+    height: 1px;
+    background: var(--cart-border-color);
+  }
+}
+
+.order-detail {
+  margin-top: 30px;
+  &__heading {
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 1.42;
+    margin-bottom: 30px;
+  }
+
+  &-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__img {
+    width: 151px;
+    @include abstracts.screen(lg) {
+      width: 80px;
+    }
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.47; /* 146.667% */
+  }
+
+  &__content {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    font-size: 2.2rem;
+    font-weight: 500;
+    line-height: 1.45; /* 145.455% */
+  }
+}

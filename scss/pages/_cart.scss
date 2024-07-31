@@ -33,6 +33,12 @@
     font-size: 2.4rem;
     font-weight: 700;
     line-height: 1.42; /* 141.667% */
+
+    &--lv2 {
+      font-size: 2.2rem;
+      font-weight: 500;
+      line-height: 1.45; /* 145.455% */
+    }
   }
 
   &__sub-heading {
@@ -103,6 +109,34 @@
 
   &__checkout-btn {
     margin-top: 30px;
+  }
+
+  &__edit-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.4rem;
+    line-height: 1.44;
+  }
+
+  &__checkbox {
+    &-input {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+
+      &::before {
+        content: url("../../assets/img/icons/checkbox-uncheck.svg");
+      }
+
+      &:not(:checked)::before {
+        filter: var(--icon-color);
+      }
+
+      &:checked::before {
+        content: url("../../assets/img/icons/checkbox-check.svg");
+      }
+    }
   }
 }
 
@@ -370,31 +404,68 @@
     height: 100%;
     display: flex;
     align-items: flex-end;
+  }
+}
 
-    &-btn {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 1.4rem;
-      line-height: 1.44;
+.payment-item {
+  display: flex;
+  margin-top: 30px;
+  padding: 20px;
+  gap: 20px;
+
+  border-radius: 20px;
+  background: var(--cart-payment-item-bg);
+
+  &__content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    @include abstracts.screen(sm) {
+      flex-direction: column;
+      align-items: flex-start;
     }
   }
 
+  &__info {
+    flex: 1;
+  }
+
+  &__thumb {
+    width: 70px;
+    height: 54px;
+    object-fit: cover;
+  }
+
+  &__title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1.44; /* 144.444% */
+  }
+
+  &__desc {
+    margin-top: 4px;
+    color: #9e9da8;
+    font-size: 1.6rem;
+    line-height: 1.5; /* 150% */
+  }
+
   &__checkbox {
-    &-input {
-      appearance: none;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 15px;
+  }
 
-      &::before {
-        content: url("../../assets/img/icons/checkbox-uncheck.svg");
-      }
+  &__price {
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 1.44;
+    color: #9e9da8;
+  }
 
-      &:not(:checked)::before {
-        filter: var(--icon-color);
-      }
-
-      &:checked::before {
-        content: url("../../assets/img/icons/checkbox-check.svg");
-      }
-    }
+  &__checkbox-input:checked + &__price {
+    color: inherit;
   }
 }
