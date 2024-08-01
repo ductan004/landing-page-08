@@ -246,6 +246,23 @@
     height: 50px;
     border-radius: 8px;
   }
+
+  &__user {
+    position: relative;
+  }
+
+  &__user:hover .act-dropdown {
+    display: block;
+  }
+
+  &__dropdown {
+    width: min(300px, 100vw) !important;
+    right: -3px !important;
+
+    &-arrow {
+      right: 17px !important;
+    }
+  }
 }
 
 .nav-btn {
@@ -378,5 +395,52 @@
     font-size: 1.4rem;
     font-weight: 500;
     line-height: 1.47; /* 146.667% */
+  }
+}
+
+.user-menu {
+  &__top {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__avarta {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+
+  &__name {
+    margin-bottom: 8px;
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+
+  &__email {
+    word-break: break-all;
+    font-size: 1.4rem;
+  }
+
+  &__list {
+    margin-top: 30px;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 0;
+  }
+
+  &__icon {
+    width: 15px;
+  }
+
+  &__separate {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid var(--top-act-separate);
   }
 }

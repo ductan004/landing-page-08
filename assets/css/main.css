@@ -1569,7 +1569,6 @@ html.dark {
 }
 @media (max-width: 767.98px) {
   html.dark {
-    --cate-item-bg: #fff;
     --product-detail-bg: #292e39;
     --product-detail-info-bg: transparent;
     --product-detail-info-content-bg: #171c28;
@@ -1815,6 +1814,19 @@ html.dark {
   height: 50px;
   border-radius: 8px;
 }
+.top-act__user {
+  position: relative;
+}
+.top-act__user:hover .act-dropdown {
+  display: block;
+}
+.top-act__dropdown {
+  width: min(300px, 100vw) !important;
+  right: -3px !important;
+}
+.top-act__dropdown-arrow {
+  right: 17px !important;
+}
 
 .nav-btn {
   height: 50px;
@@ -1930,6 +1942,44 @@ html.dark {
   font-size: 1.4rem;
   font-weight: 500;
   line-height: 1.47; /* 146.667% */
+}
+
+.user-menu__top {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.user-menu__avarta {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+.user-menu__name {
+  margin-bottom: 8px;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+.user-menu__email {
+  word-break: break-all;
+  font-size: 1.4rem;
+}
+.user-menu__list {
+  margin-top: 30px;
+}
+.user-menu__link {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 10px 0;
+}
+.user-menu__icon {
+  width: 15px;
+}
+.user-menu__separate {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--top-act-separate);
 }
 
 .footer {
@@ -3338,7 +3388,6 @@ html.dark {
 }
 .order-mt {
   margin-top: 30px;
-  margin-bottom: 80px;
 }
 @media (max-width: 767.98px) {
   .order {
@@ -3905,7 +3954,13 @@ html.dark {
     padding: 16px;
   }
 }
+.cart-info__back-arrow {
+  width: 50px;
+  padding-right: 20px;
+}
 .cart-info__heading {
+  display: flex;
+  align-items: center;
   font-size: 2.4rem;
   font-weight: 700;
   line-height: 1.42; /* 141.667% */
@@ -4294,6 +4349,9 @@ html.dark {
   color: inherit;
 }
 
+.profile-page {
+  margin-bottom: 50px;
+}
 .profile-container {
   margin-top: 30px;
 }
@@ -4369,6 +4427,17 @@ html.dark {
 }
 .profile__desc {
   margin-bottom: 16px;
+}
+
+.form-card__lable {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+.form-card__bottom {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 30px;
 }
 
 /*# sourceMappingURL=main.css.map */

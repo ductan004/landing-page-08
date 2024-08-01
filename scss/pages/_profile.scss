@@ -1,4 +1,8 @@
 .profile {
+  &-page {
+    margin-bottom: 50px;
+  }
+
   &-container {
     margin-top: 30px;
   }
@@ -90,5 +94,21 @@
 
   &__desc {
     margin-bottom: 16px;
+  }
+}
+
+// add new card
+
+.form-card {
+  &__lable {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 30px;
   }
 }

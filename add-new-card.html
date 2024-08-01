@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Profile | Grocery Mart</title>
+    <title>Add New Card | Grocery Mart</title>
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="76x76" href="./assets/favicon/apple-touch-icon.png" />
@@ -43,7 +43,7 @@
         <!-- Profile content -->
         <div class="profile-container">
           <div class="row gy-md-3">
-            <div class="col-3 col-xl-4 col-lg-5 col-md-12">
+            <div class="col-3 col-xl-4 d-lg-none">
               <aside class="profile__sidebar">
                 <div class="profile-user">
                   <img src="./assets/img/avatar.jpg" alt="" class="profile-user__avatar" />
@@ -152,165 +152,138 @@
                 </div>
               </aside>
             </div>
-            <div class="col-9 col-xl-8 col-lg-7 col-md-12">
+            <div class="col-9 col-xl-8 col-lg-12">
               <div class="cart-info">
                 <div class="row gy-3">
-                  <!-- my Wallet -->
                   <div class="col-12">
-                    <h2 class="cart-info__heading">My Wallet</h2>
-                    <p class="cart-info__desc profile__desc">Payment methods</p>
-                    <div class="row gy-md-2">
-                      <!-- Payment card 1 -->
-                      <div class="col-4 col-xl-6 col-lg-12">
-                        <article class="payment-card payment-card-1">
-                          <img src="./assets/img/card/plane-bg.svg" alt="" class="payment-card__img" />
-                          <div class="payment-card__top">
-                            <img src="./assets/img/card/plane.svg" alt="" class="payme nt-card__icon" />
-                            <span class="payment-card__type">FeatherCard</span>
+                    <h2 class="cart-info__heading">
+                      <a href="./profile.html">
+                        <img src="./assets/img/icons/arrow-left.svg" alt="" class="icon cart-info__back-arrow" />
+                      </a>
+                      Add credit or debit card
+                    </h2>
+
+                    <form action="" class="form form-card">
+                      <!-- Form row 1 -->
+                      <div class="form__row">
+                        <div class="form__group">
+                          <label for="firstName" class="form__lable form-card__lable">Fitst Name</label>
+                          <div class="form__text-input">
+                            <input
+                              type="text"
+                              name="firstName"
+                              id="firstName"
+                              placeholder="Fitst Name"
+                              minlength="6"
+                              class="form__input"
+                              required
+                            />
                           </div>
-                          <p class="payment-card__number">1234 4567 8901 2221</p>
-                          <div class="payment-card__bottom">
-                            <div>
-                              <p class="payment-card__lable">Card Holder</p>
-                              <p class="payment-card__value">Imran Khan</p>
-                            </div>
-                            <div class="payment-card__expired">
-                              <p class="payment-card__lable">Expired</p>
-                              <p class="payment-card__value">10/22</p>
-                            </div>
-                            <div class="payment-card__circle">
-                              <img src="./assets/img/card/oval.svg" alt="" />
-                            </div>
+                          <p class="form__error">Email chưa đúng định dạng</p>
+                        </div>
+                        <div class="form__group">
+                          <label for="lastName" class="form__lable form-card__lable">Last Name</label>
+                          <div class="form__text-input">
+                            <input
+                              type="text"
+                              name="lastName"
+                              id="lastName"
+                              placeholder="Last Name"
+                              minlength="6"
+                              class="form__input"
+                              required
+                            />
                           </div>
-                        </article>
+                          <p class="form__error">Email chưa đúng định dạng</p>
+                        </div>
+                      </div>
+                      <!-- Form row 2 -->
+                      <div class="form__row">
+                        <div class="form__group">
+                          <label for="card-number" class="form__lable form-card__lable">Card Number</label>
+                          <div class="form__text-input">
+                            <input
+                              type="text"
+                              name=""
+                              id="card-number"
+                              placeholder="Card Number"
+                              minlength="6"
+                              class="form__input"
+                              required
+                            />
+                          </div>
+                          <p class="form__error">Email chưa đúng định dạng</p>
+                        </div>
+                        <div class="form__group">
+                          <label for="date" class="form__lable form-card__lable">Expiration Date </label>
+                          <div class="form__text-input">
+                            <input
+                              type="text"
+                              name=""
+                              id="date"
+                              placeholder="MM/YY"
+                              minlength="6"
+                              class="form__input"
+                              required
+                            />
+                          </div>
+                          <p class="form__error">Email chưa đúng định dạng</p>
+                        </div>
+                      </div>
+                      <!-- Form row 3 -->
+                      <div class="form__row">
+                        <div class="form__group">
+                          <label for="cvv" class="form__lable form-card__lable">CVV</label>
+                          <div class="form__text-input">
+                            <input
+                              type="text"
+                              name=""
+                              id="cvv"
+                              placeholder="123"
+                              minlength="6"
+                              class="form__input"
+                              required
+                            />
+                          </div>
+                          <p class="form__error">Email chưa đúng định dạng</p>
+                        </div>
+                        <div class="form__group">
+                          <label for="phone" class="form__lable form-card__lable">Phone Number 017</label>
+                          <div class="form__text-input">
+                            <input
+                              type="text"
+                              name=""
+                              id="phone"
+                              placeholder="0339285356"
+                              minlength="10"
+                              class="form__input"
+                              required
+                            />
+                          </div>
+                          <p class="form__error">Email chưa đúng định dạng</p>
+                        </div>
+                      </div>
+                      <!-- set deflaut -->
+                      <div class="form__group">
+                        <label for="set-default-card" class="form__lable form-card__lable">Card Preferences</label>
+                        <label class="form__checkbox">
+                          <input
+                            type="checkbox"
+                            name=""
+                            id="set-default-card"
+                            checked
+                            class="form__checkbox-input d-none"
+                          />
+                          <span class="form__checkbox-lable">Set as default card</span>
+                        </label>
                       </div>
 
-                      <!-- Payment card 2 -->
-                      <div class="col-4 col-xl-6 col-lg-12">
-                        <article class="payment-card payment-card-2">
-                          <img src="./assets/img/card/leaf-bg.svg" alt="" class="payment-card__img" />
-                          <div class="payment-card__top">
-                            <img src="./assets/img/card/leaf.svg" alt="" class="payment-card__icon" />
-                            <span class="payment-card__type">FeatherCard</span>
-                          </div>
-                          <p class="payment-card__number">1234 4567 8901 2221</p>
-                          <div class="payment-card__bottom">
-                            <div>
-                              <p class="payment-card__lable">Card Holder</p>
-                              <p class="payment-card__value">Imran Khan</p>
-                            </div>
-                            <div class="payment-card__expired">
-                              <p class="payment-card__lable">Expired</p>
-                              <p class="payment-card__value">10/22</p>
-                            </div>
-                            <div class="payment-card__circle">
-                              <img src="./assets/img/card/oval.svg" alt="" />
-                            </div>
-                          </div>
-                        </article>
+                      <div class="form-card__bottom">
+                        <a href="./profile.html" class="btn btn--text">Cancel</a>
+                        <button class="btn btn--primary btn--rounded">Save card</button>
                       </div>
-
-                      <!-- Payment card 2 -->
-                      <div class="col-4 col-xl-6 col-lg-12">
-                        <a href="./add-new-card.html" class="new-card">
-                          <img src="./assets/img/icons/plus.svg" class="new-card__icon icon" alt="" />
-                          <p class="new-card__text">Add new Card</p>
-                        </a>
-                      </div>
-                    </div>
+                    </form>
                   </div>
-                  <!-- account info -->
-                  <div class="col-12">
-                    <h2 class="cart-info__heading">Account info</h2>
-                    <p class="cart-info__desc profile__desc">Addresses, contact information and password</p>
-                    <div class="row gy-md-2">
-                      <!-- account inof 1 -->
-                      <div class="col-6 col-lg-12">
-                        <article class="account-info">
-                          <div class="account-info__icon">
-                            <img src="./assets/img/icons/message.svg" alt="" class="icon" />
-                          </div>
-                          <div class="account-info__content">
-                            <h3 class="account-info__title">Email Address</h3>
-                            <p class="account-info__desc">tarek97.ta@gmail.com</p>
-                          </div>
-                        </article>
-                      </div>
-                      <!-- account inof 2 -->
-                      <div class="col-6 col-lg-12">
-                        <article class="account-info">
-                          <div class="account-info__icon">
-                            <img src="./assets/img/icons/phone.svg" alt="" class="icon" />
-                          </div>
-                          <div class="account-info__content">
-                            <h3 class="account-info__title">Phone number</h3>
-                            <p class="account-info__desc">+84339285356</p>
-                          </div>
-                        </article>
-                      </div>
-                      <!-- account inof 3 -->
-                      <div class="col-6 col-lg-12">
-                        <article class="account-info">
-                          <div class="account-info__icon">
-                            <img src="./assets/img/icons/address.svg" alt="" class="icon" />
-                          </div>
-                          <div class="account-info__content">
-                            <h3 class="account-info__title">Add an address</h3>
-                            <p class="account-info__desc">Bangladesh Embassy, Washington, DC 20008</p>
-                          </div>
-                        </article>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- oder history -->
-              <div class="order order-mt">
-                <h2 class="cart-info__heading">Order History</h2>
-                <div class="order__list">
-                  <article class="order-item">
-                    <div class="order-top">
-                      <div class="order__content">
-                        <h3 class="order__id">Order Id : <span>#01546</span></h3>
-                        <p class="order__text">Date: 08/01/2024</p>
-                      </div>
-                      <div class="order__mid">
-                        <p class="order__text">Name : Nguyen Duc Tan</p>
-                        <p class="order__text">Phone : 0339285356</p>
-                      </div>
-                      <div>
-                        <p class="order__status">Completed</p>
-                        <p class="order__total">$013.00</p>
-                      </div>
-                    </div>
-                    <div class="order-detail">
-                      <h3 class="order-detail__heading">Order Detail Item</h3>
-                      <div class="order-detail__list">
-                        <article class="order-detail-item">
-                          <img src="./assets/img/product/product-1.png" class="order-detail__img" alt="" />
-                          <div>
-                            <h3 class="order-detail__title">Coffee Beans - Espresso Arabica and Robusta Beans</h3>
-                            <div class="order-detail__content">
-                              <span class="order-detail__price">$47.00</span>
-                              <span class="order-detail__quantity">SL:3</span>
-                            </div>
-                          </div>
-                        </article>
-                        <div class="order__separate"></div>
-                        <article class="order-detail-item">
-                          <img src="./assets/img/product/product-1.png" class="order-detail__img" alt="" />
-                          <div>
-                            <h3 class="order-detail__title">Coffee Beans - Espresso Arabica and Robusta Beans</h3>
-                            <div class="order-detail__content">
-                              <span class="order-detail__price">$47.00</span>
-                              <span class="order-detail__quantity">SL:3</span>
-                            </div>
-                          </div>
-                        </article>
-                      </div>
-                    </div>
-                  </article>
                 </div>
               </div>
             </div>

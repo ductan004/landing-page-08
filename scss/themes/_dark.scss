@@ -106,7 +106,6 @@ html.dark {
   }
 
   @include abstracts.screen(md) {
-    --cate-item-bg: #fff;
     // product detial
     --product-detail-bg: #292e39;
     --product-detail-info-bg: transparent;
